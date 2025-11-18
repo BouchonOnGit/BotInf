@@ -122,4 +122,4 @@ async def plan(ctx, map_name: str, point: str, *, description: str):
 async def on_ready():
     print(f"Bot connecté en tant que {bot.user}")
 
-bot.run("MTQ0MDM4NTk0NzA5ODI4ODMzMQ.GQ6eRM.G3_oF1jAXAn8rhIht_IZp_bWGb3DcAVsb0fTgY")
+bot.run(os.getenv("DISCORD_TOKEN"))
