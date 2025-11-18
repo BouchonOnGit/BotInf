@@ -10,7 +10,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 ID_PLAN = 1439247414685859992
-DATA_FILE = "C:/Users/sthus/Documents/plan.json"
+DATA_FILE = "plan.json"
 
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
@@ -123,3 +123,4 @@ async def on_ready():
     print(f"Bot connecté en tant que {bot.user}")
 
 bot.run(os.getenv("DISCORD_TOKEN"))
+
