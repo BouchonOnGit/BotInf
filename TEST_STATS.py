@@ -18,8 +18,14 @@ if not os.path.exists(DATA_FILE):
         json.dump({}, f)
 
 def load_data():
-    with open(DATA_FILE, "r") as f:
-        return json.load(f)
+    try:
+        with open(DATA_FILE, "r") as f:
+            content = f.read().strip()
+            if not content:
+                return {}  # fichier vide → dictionnaire vide
+            return json.loads(content)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
 
 def save_data(data):
     with open(DATA_FILE, "w") as f:
@@ -124,5 +130,6 @@ async def on_ready():
     print(f"Bot connecté en tant que {bot.user}")
 
 bot.run(os.getenv("DISCORD_TOKEN"))
+
 
 
