@@ -10,8 +10,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 ID_PLAN = 1439247414685859992
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_FILE = os.path.join(BASE_DIR, "plan.json")
+DATA_FILE = "plan.json"
 
 if not os.path.exists(DATA_FILE):
     with open(DATA_FILE, "w") as f:
